@@ -891,17 +891,22 @@ This licence does not apply to either upstream review corpus, model weights, or 
     write_text(OSF / "LICENSE-DATA", data_license)
     citation = """cff-version: 1.2.0
 message: "If you use this software or its derived data, please cite the manuscript and release."
-title: "Interaction Fusion of Text and LLM-Extracted Aspects"
+title: "Interaction fusion of text and LLM-extracted aspects improves hotel rating prediction at scale: A verifiable study on TripAdvisor"
 type: software
 authors:
   - family-names: Zhu
     given-names: Xue
   - family-names: Zhu
     given-names: Qinfeng
+identifiers:
+  - type: doi
+    value: 10.17605/OSF.IO/PS54C
 version: 1.0.0
-date-released: 2026-08-05
+date-released: "2026-08-05"
+repository-code: "https://github.com/zhuqinfeng1999/interaction-fusion-hotel-rating"
+repository-artifact: "https://osf.io/ps54c/"
 license: MIT
-abstract: "Reproducible code and sanitized artefacts for hotel-rating prediction with LLM-extracted aspects."
+abstract: "Reproducible code and sanitized artefacts accompanying a manuscript under review on hotel-rating prediction with LLM-extracted aspects."
 """
     write_text(GITHUB / "CITATION.cff", citation)
 
@@ -1063,6 +1068,8 @@ No upstream review text is redistributed.
 
 ## OSF deposit
 
+- Public project: <https://osf.io/ps54c/>
+- DOI: <https://doi.org/10.17605/OSF.IO/PS54C>
 - `extraction/`: structured numeric/categorical extraction fields only. The only string column is `traveler_segment`.
 - `predictions/`: consolidated held-out predictions. TripAdvisor model columns are clipped to [1,5].
 - Booking `y_true` and unsuffixed model columns use the native score scale; `y_true_rescaled_1_5` and columns ending `__rescaled_1_5` provide the manuscript's 1-5 scale.

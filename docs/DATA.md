@@ -21,6 +21,8 @@ No upstream review text is redistributed.
 
 ## OSF deposit
 
+- Public project: <https://osf.io/ps54c/>
+- DOI: <https://doi.org/10.17605/OSF.IO/PS54C>
 - `extraction/`: structured numeric/categorical extraction fields only. The only string column is `traveler_segment`.
 - `predictions/`: consolidated held-out predictions. TripAdvisor model columns are clipped to [1,5].
 - Booking `y_true` and unsuffixed model columns use the native score scale; `y_true_rescaled_1_5` and columns ending `__rescaled_1_5` provide the manuscript's 1-5 scale.

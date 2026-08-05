@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB.svg)](https://www.python.org/)
-<!-- Add the OSF DOI badge here after the deposit has been created and a DOI assigned. -->
+[![DOI: 10.17605/OSF.IO/PS54C](https://img.shields.io/badge/DOI-10.17605%2FOSF.IO%2FPS54C-blue.svg)](https://doi.org/10.17605/OSF.IO/PS54C)
 
 **Xue Zhu**<sup>1</sup> · **Qinfeng Zhu**<sup>2</sup>
 
@@ -135,8 +135,8 @@ Full per-fold metrics, paired significance tests, and the regularization audit a
 ```
 
 Large derived artefacts — sanitized extraction outputs, evidence offsets, consolidated
-per-review predictions, and full coefficient tables — are prepared for a separate data
-deposit. Its DOI will be added after upload. See [Data](#data).
+per-review predictions, and full coefficient tables — are available from the public
+[OSF research-artefact deposit](https://doi.org/10.17605/OSF.IO/PS54C). See [Data](#data).
 
 ---
 
@@ -234,8 +234,10 @@ automatically by `scripts/37_phase3_booking_prepare.py`.
 
 ### Released derived artefacts
 
-Prepared for a companion OSF deposit under CC BY 4.0. The public OSF link and DOI will
-be added here only after the deposit has been created:
+Publicly deposited on OSF under CC BY 4.0:
+
+- **DOI:** [10.17605/OSF.IO/PS54C](https://doi.org/10.17605/OSF.IO/PS54C)
+- **Project:** [https://osf.io/ps54c/](https://osf.io/ps54c/)
 
 | Directory | Contents |
 | :--- | :--- |
@@ -289,8 +291,9 @@ python scripts/42_phase4_booking_u0.py --folds 1,2,3,4,5 --inner-jobs 5
 python scripts/43_phase4_consolidate.py
 ```
 
-To skip extraction entirely, download `extraction/` from the OSF deposit into `outputs/`
-and start at step 3. Full commands, expected runtimes, and hardware notes are in
+To skip extraction entirely, download `extraction/` from the
+[OSF deposit](https://doi.org/10.17605/OSF.IO/PS54C) into `outputs/` and start at step 3.
+Full commands, expected runtimes, and hardware notes are in
 [`docs/REPRODUCE.md`](docs/REPRODUCE.md).
 
 **Determinism note.** Repeated extraction under an identical configuration reproduces the
@@ -399,8 +402,22 @@ with this study.
 }
 ```
 
-Please also cite the upstream corpora and the deposited artefacts
-(the DOI will be added after deposit) if you use them.
+The released derived artefacts can be cited as:
+
+```bibtex
+@misc{zhu2026interactionartefacts,
+  title     = {Interaction fusion of text and {LLM}-extracted aspects improves hotel
+               rating prediction at scale: A verifiable study on {TripAdvisor}},
+  author    = {Zhu, Xue and Zhu, Qinfeng},
+  year      = {2026},
+  publisher = {OSF},
+  doi       = {10.17605/OSF.IO/PS54C},
+  url       = {https://doi.org/10.17605/OSF.IO/PS54C},
+  note      = {Code and derived research artefacts}
+}
+```
+
+Please also cite the upstream corpora if you use them.
 
 ---
 
