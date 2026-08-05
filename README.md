@@ -111,7 +111,7 @@ on an independent Booking.com corpus. The *functional form* in which the channel
 matters far less: under unified tuning, additive concatenation and segment-conditioned
 interaction differ by 0.0030 MAE in the hotel-weighted paired contrast, roughly one tenth
 of the gain either achieves over text alone. A fine-tuned transformer attains lower error
-than any configuration proposed here, at roughly twelve times the fitting cost and without
+than any configuration proposed here, at roughly eight times the fitting cost and without
 inspectable coefficients.
 
 Full per-fold metrics, paired significance tests, and the regularization audit are in

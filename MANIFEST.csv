@@ -3,7 +3,7 @@ relative_path,bytes,sha256,description
 CITATION.cff,763,d7a81df99f505ccffe57bde4cd4bc10a6a2106a686be9ff331e17d0920b129ec,"Release metadata, configuration, environment, or licence file."
 LICENSE,1080,7cc63aceb9a1ea0ae9523951db4f392848ecbdc680953cda4a9db116e2f67c39,"Release metadata, configuration, environment, or licence file."
 LICENSE-DATA,620,bdb83cd86b5c8f65a08a872af9ef17115100f988b2711355cc2df5c7ba346cd8,"Release metadata, configuration, environment, or licence file."
-README.md,20580,953361679594bf023e8026f9096a6550772efa04f692d37251afcb857d450fb4,Release overview and data-use guidance.
+README.md,20579,dd34fc3f5e3e0ca6af3d531df7a95469abe8d8fdbf8f6250c9d889ec8dd0d334,Release overview and data-use guidance.
 config/local_llm.yaml,333,3852a599cc70fcbbf11077f436812e09fa2439641d534c4cd57f9348aaebcf7e,"Release metadata, configuration, environment, or licence file."
 docs/DATA.md,3395,8fe2c5fee61a6d7d2e93acf12a5657bdc4f83439e3625295260b9cfcbee33346,Reproduction/data documentation.
 docs/REPRODUCE.md,7304,56dca11f6b1b22c68e68590bf77c45c03e52492c2de862a681e9a5425ac2ba92,Reproduction/data documentation.
