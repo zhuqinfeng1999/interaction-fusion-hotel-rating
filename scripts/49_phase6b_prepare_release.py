@@ -1055,6 +1055,7 @@ No upstream review text is redistributed.
 
 - Obtain the Hotel Reviews corpus from its distributor and place `reviews.csv` and `offerings.csv` under `data_ori/`.
 - Required review fields include `title`, `text`, nested `ratings`, nested `author`, and `offering_id`; offering metadata comes from `offerings.csv`.
+- The distributor labels the database under the [Open Database License (ODbL) v1.0](https://opendatacommons.org/licenses/odbl/1-0/) and its contents under the [Database Contents License (DbCL) v1.0](https://opendatacommons.org/licenses/dbcl/1-0/). These labels document how the release is distributed rather than determining rights in the underlying observations.
 - The repository did **not** persist an authoritative TripAdvisor download timestamp. The local CSV mtime of 2023-08-30 is archive metadata and must not be described as the download date.
 - After `scripts/01_prepare_dataset.py`, the accepted cleaned corpus has 877,808 reviews from 3,945 hotels.
 

@@ -225,7 +225,7 @@ their distributors.
 
 | Corpus | Source | Licence | Scale |
 | :--- | :--- | :--- | :--- |
-| TripAdvisor (primary) | [Kaggle](https://www.kaggle.com/datasets/joebeachcapital/hotel-reviews) | Consult the distributor's current terms; not redistributed here | 877,808 cleaned reviews, 3,945 properties, 2001–2012 |
+| TripAdvisor (primary) | [Kaggle](https://www.kaggle.com/datasets/joebeachcapital/hotel-reviews) | ODbL v1.0 (database) / DbCL v1.0 (contents), as labelled by the distributor; not redistributed here | 877,808 cleaned reviews, 3,945 properties, 2001–2012 |
 | Booking.com (external validation) | [Kaggle](https://www.kaggle.com/datasets/jiashenliu/515k-hotel-reviews-data-in-europe) · [HF mirror](https://huggingface.co/datasets/Dricz/515k-Hotel-Reviews-In-Europe) | The mirror and Kaggle page carry different licence labels; see `docs/DATA.md` | 515,738 source rows; 514,935 cleaned reviews, 1,493 properties, 2015–2017 |
 
 Place the TripAdvisor files at `data_ori/reviews.csv` and `data_ori/offerings.csv`, then run
@@ -315,8 +315,10 @@ caches, model checkpoints, and any artefact containing review text.
 
 ## Outputs and validation
 
-The working pipeline writes regenerable artefacts under `outputs/`; the public package
-contains only the filtered files in `release/github/` and `release/osf/`.
+The working pipeline writes regenerable artefacts under `outputs/`; this repository
+contains only the filtered subset needed to reproduce the reported results, while the
+large derived artefacts are available from the
+[OSF deposit](https://doi.org/10.17605/OSF.IO/PS54C).
 
 | Path | Producer | Contents / validation |
 | :--- | :--- | :--- |
@@ -335,8 +337,8 @@ contains only the filtered files in `release/github/` and `release/osf/`.
 | `outputs/aspect_importance_{profile}.md` and figure | `07_run_llm_aspects_analysis.py` | Standardized coefficient ranking and plot |
 | `outputs/segment_preference_{profile}.md` and heatmap | `07_run_llm_aspects_analysis.py` | Segment-wise aspect means, mention rates, and heatmap |
 | `outputs/run_profile_{profile}_timing.md` | `07_run_llm_aspects_analysis.py` | Stage-level wall time and cache-hit profiling |
-| `release/github/supporting_information/S{1,2,3}_File.xlsx` | scripts 48/49 | Journal Supporting Information; independently uploadable and hash-tracked |
-| `release/{github,osf}/MANIFEST.csv` | `49_phase6b_prepare_release.py` | Byte size and SHA-256 for every other file in each release tree |
+| `supporting_information/S{1,2,3}_File.xlsx` | scripts 48/49 | Journal Supporting Information; independently uploadable and hash-tracked |
+| `MANIFEST.csv` | `49_phase6b_prepare_release.py` | Byte size and SHA-256 for every other file in this repository; the OSF deposit carries its own manifest |
 
 ## Reproducibility
 
@@ -380,7 +382,7 @@ contains only the filtered files in `release/github/` and `release/osf/`.
 | :--- | :--- |
 | Source code in this repository | [MIT](LICENSE) |
 | Derived data tables in this repository and in the OSF deposit | [CC BY 4.0](LICENSE-DATA) |
-| Upstream TripAdvisor corpus | Consult the distributor's current terms — not redistributed here |
+| Upstream TripAdvisor corpus | ODbL v1.0 / DbCL v1.0 as labelled by the distributor — not redistributed here |
 | Upstream Booking.com corpus | See `docs/DATA.md` and the distributor pages — not redistributed here |
 
 Licence labels for the upstream corpora are recorded as documentation of how those
