@@ -1,9 +1,9 @@
 relative_path,bytes,sha256,description
 .gitignore,177,9d6c6e46a8d45d5a09c8904bb3179d5a06363adbf1cfb5c5c57dd71a9cab3b3d,"Release metadata, configuration, environment, or licence file."
-CITATION.cff,571,ee148dcecc51c02bdb11a16f9089be49964d43f9da27b6a7f1c92b4cb48a3a52,"Release metadata, configuration, environment, or licence file."
+CITATION.cff,656,011349498565bf7881cdc6c94341db22a5419ae9d8f1c007fa24f1a44bc557b5,"Release metadata, configuration, environment, or licence file."
 LICENSE,1080,7cc63aceb9a1ea0ae9523951db4f392848ecbdc680953cda4a9db116e2f67c39,"Release metadata, configuration, environment, or licence file."
 LICENSE-DATA,620,bdb83cd86b5c8f65a08a872af9ef17115100f988b2711355cc2df5c7ba346cd8,"Release metadata, configuration, environment, or licence file."
-README.md,19770,170cfd8e0d95446303823724339e4ab60a91f52d3c335eec441d37e327062664,Release overview and data-use guidance.
+README.md,19832,c94eaa763f9e5135093ccc438eb0e7c8419e7adc9e847fe0ebe89531bf66ee01,Release overview and data-use guidance.
 config/local_llm.yaml,333,3852a599cc70fcbbf11077f436812e09fa2439641d534c4cd57f9348aaebcf7e,"Release metadata, configuration, environment, or licence file."
 docs/DATA.md,2942,87f4a822171e6c1e0cc560a4627d62b8576389abf998e68e7f494002a3b45e51,Reproduction/data documentation.
 docs/REPRODUCE.md,7304,56dca11f6b1b22c68e68590bf77c45c03e52492c2de862a681e9a5425ac2ba92,Reproduction/data documentation.

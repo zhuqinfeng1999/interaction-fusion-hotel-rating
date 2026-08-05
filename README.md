@@ -146,8 +146,8 @@ Requires Python 3.10. GPU is needed only for the extraction and transformer stag
 ridge model in the paper runs on CPU.
 
 ```bash
-git clone <repository-url>
-cd <repository-directory>
+git clone https://github.com/zhuqinfeng1999/interaction-fusion-hotel-rating.git
+cd interaction-fusion-hotel-rating
 conda env create -f environment.yml
 conda activate hotel-fusion
 ```

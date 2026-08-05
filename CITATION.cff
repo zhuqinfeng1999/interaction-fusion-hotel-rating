@@ -9,5 +9,6 @@ authors:
     given-names: Qinfeng
 version: 1.0.0
 date-released: 2026-08-05
+repository-code: "https://github.com/zhuqinfeng1999/interaction-fusion-hotel-rating"
 license: MIT
 abstract: "Reproducible code and sanitized artefacts accompanying a manuscript under review on hotel-rating prediction with LLM-extracted aspects."
