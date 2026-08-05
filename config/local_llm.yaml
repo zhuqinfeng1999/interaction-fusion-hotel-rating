@@ -1,0 +1,14 @@
+profiles:
+  qwen25_7b:
+    provider: openai_compatible
+    base_url: http://localhost:8000/v1
+    endpoints:
+      - http://localhost:8000/v1
+      - http://localhost:8001/v1
+    api_key: local-llm
+    model: Qwen/Qwen2.5-7B-Instruct
+    temperature: 0
+    max_tokens: 900
+    timeout_sec: 120
+    concurrency: 16
+    max_retries: 3

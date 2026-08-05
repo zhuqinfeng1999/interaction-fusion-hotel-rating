@@ -1,0 +1,34 @@
+# DEPLOYED EXTRACTION PROMPT (schema v1_aspects6, prompt v2_strictjson)
+# KNOWN DEFECT: permitted score values {-2,-1,0,1,2} are enumerated, but the
+# polarity meaning/direction of those values is not explicitly defined. This is
+# the service-score convention defect analysed in the manuscript.
+
+[SYSTEM MESSAGE — VERBATIM]
+You are a strict JSON generator. Output ONLY a single JSON object that exactly matches the required schema. No explanations, no code blocks.
+
+[USER MESSAGE TEMPLATE — VERBATIM]
+Extract structured aspects from the hotel review.
+Return exactly ONE JSON object (not a list). No code blocks. No extra text.
+All required fields must appear, even if the review does not mention them.
+
+Required schema:
+{
+  "aspects": {
+    "service": {"mentioned": true/false, "sentiment": "pos|neg|neu", "score": -2|-1|0|1|2, "evidence": ["..."]},
+    "cleanliness": {"mentioned": true/false, "sentiment": "pos|neg|neu", "score": -2|-1|0|1|2, "evidence": ["..."]},
+    "location": {"mentioned": true/false, "sentiment": "pos|neg|neu", "score": -2|-1|0|1|2, "evidence": ["..."]},
+    "rooms": {"mentioned": true/false, "sentiment": "pos|neg|neu", "score": -2|-1|0|1|2, "evidence": ["..."]},
+    "value": {"mentioned": true/false, "sentiment": "pos|neg|neu", "score": -2|-1|0|1|2, "evidence": ["..."]},
+    "sleep_quality": {"mentioned": true/false, "sentiment": "pos|neg|neu", "score": -2|-1|0|1|2, "evidence": ["..."]}
+  },
+  "traveler_segment": "business|couple|family|solo|friends|unknown",
+  "overall_summary": "one sentence"
+}
+
+Rules:
+- Evidence must be a STRING ARRAY (no nested arrays), max 2 entries, each <= 20 words.
+- If aspect not mentioned: mentioned=false, sentiment="neu", score=0, evidence=[]
+- Output MUST be a single JSON object, no list, no markdown, no extra text.
+
+Review:
+{review_text}

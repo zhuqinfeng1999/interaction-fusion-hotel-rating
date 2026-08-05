@@ -1,0 +1,4 @@
+model,model_id,n,mae_1to5_mean,mae_1to5_sd,rmse_1to5_mean,rmse_1to5_sd,mae_native_mean,mae_native_sd,rmse_native_mean,rmse_native_sd,alpha_geomean,fit_seconds_total,tuning_seconds_total
+simple_fusion,phase4_booking_u0_simple_fusion,200035,0.356175,0.002634,0.473138,0.003283,0.801393,0.005926,1.064560,0.007386,10.000000,33.391717,1228.953925
+interaction_fusion,phase4_booking_u0_interaction_fusion,200035,0.356370,0.002698,0.473380,0.003313,0.801832,0.006071,1.065105,0.007455,10.000000,196.870942,7660.226818
+text_only,phase4_booking_u0_text_only,200035,0.363804,0.002839,0.482105,0.003180,0.818559,0.006389,1.084736,0.007154,4.466836,18.114174,1900.224236

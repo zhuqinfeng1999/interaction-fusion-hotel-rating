@@ -1,0 +1,14 @@
+section,aspect,n,icc_2_1,pearson_r,exact_agreement,mean_qwen,mean_llama,cohen_kappa,mention_rate_qwen,mention_rate_llama,sentiment_exact_all,sentiment_exact_both_mentioned,score_sentiment_direction_consistency_qwen,score_sentiment_direction_consistency_llama,llama_negative_sentiment_positive_score_rate,llama_positive_sentiment_nonpositive_score_rate,mention_exact_agreement,mention_pabak,mention_variance_qwen,mention_variance_llama,assessment,score_semantics_source
+score_agreement,service,200034,-0.098628,-0.101171,0.469885,0.426957,0.453338,,,,,,,,,,,,,,,
+score_agreement,cleanliness,200034,0.100338,0.104201,0.628463,0.194312,0.260681,,,,,,,,,,,,,,,
+score_agreement,location,200034,0.232708,0.24348,0.551221,0.546287,0.374716,,,,,,,,,,,,,,,
+score_agreement,rooms,200034,0.067632,0.072816,0.427612,0.223872,0.363418,,,,,,,,,,,,,,,
+score_agreement,value,200034,0.049468,0.051325,0.655694,0.105132,0.232056,,,,,,,,,,,,,,,
+score_agreement,sleep_quality,200034,0.07377,0.076476,0.791345,0.0886,0.096099,,,,,,,,,,,,,,,
+mention_agreement,service,200034,,,0.856854,,,0.06016,0.851515,0.994561,,,,,,,,,,,,
+mention_agreement,cleanliness,200034,,,0.904586,,,0.807478,0.522721,0.596849,,,,,,,,,,,,
+mention_agreement,location,200034,,,0.935616,,,0.799569,0.775543,0.8244,,,,,,,,,,,,
+mention_agreement,rooms,200034,,,0.964536,,,0.848403,0.858324,0.871262,,,,,,,,,,,,
+mention_agreement,value,200034,,,0.869877,,,0.743047,0.443575,0.55678,,,,,,,,,,,,
+mention_agreement,sleep_quality,200034,,,0.889944,,,0.707858,0.257856,0.245443,,,,,,,,,,,,
+service_semantics,,200034,,,,,,,,,0.852165,0.959811,0.930902,0.347891,0.080276,0.44274,0.856854,0.713709,0.126437,0.005409,schema-semantics/prompt sensitivity; not genuine sentiment disagreement,"scripts/18_phase2_schema_enforcement.py:45-48,63-66 (enum specified; polarity mapping absent)"

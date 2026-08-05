@@ -1,0 +1,25 @@
+section,contrast,first,second,first_model_id,second_model_id,n_hotels,mean_difference,median_difference,wilcoxon_statistic,wilcoxon_p,bootstrap_ci_low,bootstrap_ci_high,bootstrap_resamples,seed,significant_0.05,equivalent_within_0.005,abs_difference_to_fusion_gain_ratio,ablation,reference,comparison_note,difference,n_properties
+primary_u0,simple_fusion_minus_text_only,simple_fusion,text_only,phase4_u0_text_llm_simple_fusion,phase4_u0_text_only_tfidf_ridge,3945.0,-0.025567,-0.024125,1348533.0,0.0,-0.027912,-0.023251,10000,42,True,,,,,,,
+primary_u0,interaction_fusion_minus_text_only,interaction_fusion,text_only,phase4_u0_interaction_fusion,phase4_u0_text_only_tfidf_ridge,3945.0,-0.028535,-0.024807,1151427.0,0.0,-0.030802,-0.026265,10000,42,True,,,,,,,
+primary_u0,interaction_fusion_minus_simple_fusion,interaction_fusion,simple_fusion,phase4_u0_interaction_fusion,phase4_u0_text_llm_simple_fusion,3945.0,-0.002968,-0.000863,3093750.0,0.0,-0.003644,-0.002295,10000,42,True,True,0.103998,,,,,
+primary_u0,residual_on_llm_minus_text_only,residual_on_llm,text_only,phase4_u0_residual_on_llm,phase4_u0_text_only_tfidf_ridge,3945.0,-0.028936,-0.022625,260585.5,0.0,-0.030003,-0.027882,10000,42,True,,,,,,,
+primary_u0,llm_aspects_only_minus_text_only,llm_aspects_only,text_only,phase4_u0_llm_aspects_only,phase4_u0_text_only_tfidf_ridge,3945.0,0.102492,0.064156,888513.0,0.0,0.095982,0.109093,10000,42,True,,,,,,,
+primary_u0,roberta_minus_interaction_fusion,roberta,interaction_fusion,roberta_base_phase2_lr5em05_regression,phase4_u0_interaction_fusion,3945.0,-0.094681,-0.079449,575878.0,0.0,-0.099723,-0.089804,10000,42,True,,,,,,,
+primary_u0,bert_cls_plus_zint_minus_interaction_fusion,bert_cls_plus_zint,interaction_fusion,bert_base_uncased_cls_plus_zint_paper,phase4_u0_interaction_fusion,3945.0,-0.049706,-0.030603,1032496.0,0.0,-0.053335,-0.046101,10000,42,True,,,,,,,
+ablation_u0,A1_minus_A4,,,,,3945.0,0.002968,0.000863,3093750.0,0.0,0.002295,0.003644,10000,42,,,,A1,A4,full held-out rows,,
+ablation_u0,A1_minus_A1,,,,,3945.0,0.0,0.0,0.0,1.0,0.0,0.0,10000,42,,,,A1,A1,full held-out rows,,
+ablation_u0,A2_minus_A4,,,,,3945.0,0.014131,0.007469,1623236.0,0.0,0.012747,0.015532,10000,42,,,,A2,A4,full held-out rows,,
+ablation_u0,A2_minus_A1,,,,,3945.0,0.011164,0.006974,1479557.0,0.0,0.010118,0.012224,10000,42,,,,A2,A1,full held-out rows,,
+ablation_u0,A3_minus_A4,,,,,3945.0,0.012284,0.006231,1738262.0,0.0,0.011054,0.013515,10000,42,,,,A3,A4,full held-out rows,,
+ablation_u0,A3_minus_A1,,,,,3945.0,0.009317,0.005472,1621271.0,0.0,0.008409,0.01022,10000,42,,,,A3,A1,full held-out rows,,
+ablation_u0,A4_minus_A4,,,,,3945.0,0.0,0.0,0.0,1.0,0.0,0.0,10000,42,,,,A4,A4,full held-out rows,,
+ablation_u0,A4_minus_A1,,,,,3945.0,-0.002968,-0.000863,3093750.0,0.0,-0.003644,-0.002295,10000,42,,,,A4,A1,full held-out rows,,
+ablation_u0,A5_minus_A4,,,,,3945.0,0.012469,0.006592,1813595.0,0.0,0.01116,0.0138,10000,42,,,,A5,A4,full held-out rows,,
+ablation_u0,A5_minus_A1,,,,,3945.0,0.009502,0.005838,1732814.0,0.0,0.008508,0.010518,10000,42,,,,A5,A1,full held-out rows,,
+ablation_u0,A7_minus_A4,,,,,3945.0,0.012652,0.007425,1677986.0,0.0,0.011363,0.013966,10000,42,,,,A7,A4,full held-out rows,,
+ablation_u0,A7_minus_A1,,,,,3945.0,0.009684,0.006196,1703757.0,0.0,0.008653,0.010728,10000,42,,,,A7,A1,full held-out rows,,
+ablation_u0,A8_minus_A4,,,,,3718.0,0.021186,0.010547,1769451.0,0.0,0.01905,0.023364,10000,42,,,,A8,A4,matched known-segment rows,,
+ablation_u0,A8_minus_A1,,,,,3718.0,0.025523,0.011684,1417170.0,0.0,0.023461,0.027645,10000,42,,,,A8,A1,matched known-segment rows,,
+booking_u0,,simple_fusion,text_only,,,,-0.007736,,29367.0,0.0,-0.008797,-0.006665,10000,42,,,,,,,first_minus_second_equal_property_MAE_on_1to5,571.0
+booking_u0,,interaction_fusion,text_only,,,,-0.007652,,29835.0,0.0,-0.008721,-0.006565,10000,42,,,,,,,first_minus_second_equal_property_MAE_on_1to5,571.0
+booking_u0,,interaction_fusion,simple_fusion,,,,8.4e-05,,75521.0,0.119999,-0.000122,0.000288,10000,42,,,,,,,first_minus_second_equal_property_MAE_on_1to5,571.0

@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+.env
+.venv/
+*.egg-info/
+outputs/
+data_ori/
+data_external/
+llm_cache/
+tfidf_cache/
+checkpoints/
+.cache/
+*.sqlite
+*.log
+*.pid

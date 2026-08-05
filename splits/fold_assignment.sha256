@@ -1,0 +1,2 @@
+dfe3a434fb00c894218309c332627dc0131a2db3cc2cd241727fc712a4803942  fold_assignment.int8.tobytes()
+Procedure: sort fold_assignment.parquet by row_id, cast fold to NumPy int8, hash the C-contiguous array bytes with SHA-256.

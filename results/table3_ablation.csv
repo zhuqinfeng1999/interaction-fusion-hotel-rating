@@ -1,0 +1,9 @@
+ablation,model_id,n,mae_mean,mae_sd,rmse_mean,rmse_sd,alpha_geomean,all_interior
+A1,phase4_u0_text_llm_simple_fusion,877808,0.436431,0.006103,0.577071,0.006886,5.623413,True
+A2,phase4_u0_a2_score_interactions_only,877808,0.442433,0.007320,0.585375,0.008494,15.848932,True
+A3,phase4_u0_a3_mention_interactions_only,877808,0.441376,0.007011,0.584145,0.008443,14.125375,True
+A4,phase4_u0_interaction_fusion,877808,0.436179,0.005819,0.576671,0.006324,3.548134,True
+A5,phase4_u0_a5_interactions_without_main,877808,0.441829,0.007619,0.584813,0.009082,12.589254,True
+A7,phase4_u0_a7_unknown_columns_removed,877808,0.442176,0.006712,0.585037,0.007890,14.125375,True
+A8,phase4_u0_a8_known_segment_only,378067,0.415136,0.006738,0.554936,0.006413,10.000000,True
+A4_known_reference,phase4_u0_a4_known_segment_reference,378067,0.407835,0.005920,0.541757,0.004824,3.548134,True

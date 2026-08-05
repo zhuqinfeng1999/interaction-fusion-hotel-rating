@@ -1,0 +1,116 @@
+model_id,included,category,reason
+phase4_u0_a2_score_interactions_only,True,Ablation,listed in Phase 6B Part 3
+phase4_u0_a3_mention_interactions_only,True,Ablation,listed in Phase 6B Part 3
+phase4_u0_a4_known_segment_reference,True,Ablation,listed in Phase 6B Part 3
+phase4_u0_a5_interactions_without_main,True,Ablation,listed in Phase 6B Part 3
+phase4_u0_a7_unknown_columns_removed,True,Ablation,listed in Phase 6B Part 3
+phase4_u0_a8_known_segment_only,True,Ablation,listed in Phase 6B Part 3
+phase4_booking_u0_interaction_fusion,True,External Booking,listed in Phase 6B Part 3
+phase4_booking_u0_simple_fusion,True,External Booking,listed in Phase 6B Part 3
+phase4_booking_u0_text_only,True,External Booking,listed in Phase 6B Part 3
+l5_ensemble_interaction,True,Extractor sensitivity L5,one of the seven consolidated L5 configurations
+l5_ensemble_simple,True,Extractor sensitivity L5,one of the seven consolidated L5 configurations
+l5_llama_interaction,True,Extractor sensitivity L5,one of the seven consolidated L5 configurations
+l5_llama_simple,True,Extractor sensitivity L5,one of the seven consolidated L5 configurations
+l5_qwen_interaction,True,Extractor sensitivity L5,one of the seven consolidated L5 configurations
+l5_qwen_simple,True,Extractor sensitivity L5,one of the seven consolidated L5 configurations
+l5_text_only,True,Extractor sensitivity L5,one of the seven consolidated L5 configurations
+bert_base_uncased_cls_plus_zint_paper,True,Neural,listed in Phase 6B Part 3
+bert_base_uncased_regression,True,Neural,listed in Phase 6B Part 3
+qwen_direct_zero_n100000,True,Neural,listed in Phase 6B Part 3
+roberta_base_phase2_lr5em05_regression,True,Neural,listed in Phase 6B Part 3
+interaction_fusion,True,Panel A,listed in Phase 6B Part 3
+llm_aspects_only,True,Panel A,listed in Phase 6B Part 3
+residual_on_llm,True,Panel A,listed in Phase 6B Part 3
+text_llm_simple_fusion,True,Panel A,listed in Phase 6B Part 3
+text_only_tfidf_ridge,True,Panel A,listed in Phase 6B Part 3
+upper_bound_true_aspects,True,Panel A,listed in Phase 6B Part 3
+phase4_u0_interaction_fusion,True,Panel B U0,listed in Phase 6B Part 3
+phase4_u0_llm_aspects_only,True,Panel B U0,listed in Phase 6B Part 3
+phase4_u0_residual_on_llm,True,Panel B U0,listed in Phase 6B Part 3
+phase4_u0_text_llm_simple_fusion,True,Panel B U0,listed in Phase 6B Part 3
+phase4_u0_text_only_tfidf_ridge,True,Panel B U0,listed in Phase 6B Part 3
+phase4_u0_upper_bound_true_aspects,True,Panel B U0,listed in Phase 6B Part 3
+phase2_claim_simple_at_text_alpha,True,Protocol sensitivity,listed in Phase 6B Part 3
+phase2_r0_interaction_shared_ridge,True,Protocol sensitivity,listed in Phase 6B Part 3
+phase2_r0_simple_shared_ridge,True,Protocol sensitivity,listed in Phase 6B Part 3
+phase2_r0_text_shared_ridge,True,Protocol sensitivity,listed in Phase 6B Part 3
+phase2_r1b_simple_block_ridge,True,Protocol sensitivity,listed in Phase 6B Part 3
+phase2_r1c_interaction_block_ridge,True,Protocol sensitivity,listed in Phase 6B Part 3
+phase2_r2a_interaction_at_text_alpha,True,Protocol sensitivity,listed in Phase 6B Part 3
+bert_base_uncased_cls_plus_z_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_cls_text_only_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_crossfit_cls_plus_z_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_crossfit_cls_plus_zint_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_crossfit_cls_text_only_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_crossfit_mean_plus_z_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_crossfit_mean_plus_zint_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_crossfit_mean_text_only_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_end_to_end_plus_z_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_end_to_end_plus_zint_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_end_to_end_text_only_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_insample_cls_plus_z_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_insample_cls_plus_zint_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_insample_cls_text_only_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_insample_mean_plus_z_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_insample_mean_plus_zint_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_insample_mean_text_only_paper_r0,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_mean_plus_z_legacy,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_mean_plus_z_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_mean_plus_zint_legacy,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_mean_plus_zint_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_mean_text_only_legacy,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+bert_base_uncased_mean_text_only_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_a4_known_segment_reference,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_a5_interactions_without_main,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_a6_unmasked_scores,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_a7_unknown_column_removed,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_a8_known_segment_only,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho000_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho000_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho000_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho020_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho020_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho020_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho040_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho040_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho040_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho060_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho060_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho060_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho080_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho080_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho080_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho100_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho100_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_e2_rho100_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p1_segment_permutation_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p1_segment_permutation_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p1_segment_permutation_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p1_segment_permutation_seed45,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p1_segment_permutation_seed46,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p2_aspect_permutation_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p2_aspect_permutation_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p2_aspect_permutation_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p2_aspect_permutation_seed45,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p2_aspect_permutation_seed46,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p3_random_dense_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p3_random_dense_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p3_random_dense_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p3_random_dense_seed45,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p3_random_dense_seed46,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p4_sparsity_matched_random_seed42,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p4_sparsity_matched_random_seed43,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p4_sparsity_matched_random_seed44,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p4_sparsity_matched_random_seed45,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p4_sparsity_matched_random_seed46,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p5_mention_interactions_only,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_p5_score_interactions_only,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_r2b_simple_at_interaction_alpha,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+phase2_r2c_text_at_interaction_alpha,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+qwen_direct_few_n100000,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+roberta_base_phase2_maxlen512_5em05_regression,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+roberta_base_regression,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+tfidf_svd300_mean_plus_z_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+tfidf_svd300_mean_plus_zint_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
+tfidf_svd300_mean_text_only_paper,False,Excluded exploratory model,not in the manuscript-scoped Phase 6B model filter
