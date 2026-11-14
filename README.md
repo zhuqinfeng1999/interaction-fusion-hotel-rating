@@ -1,8 +1,8 @@
 <div align="center">
 
-# Interaction Fusion of Text and LLM-Extracted Aspects
+# Fusing Text with LLM-Extracted Aspects
 
-### Hotel Rating Prediction at Scale — A Verifiable Study on TripAdvisor
+### Hotel Rating Prediction at Scale: A Verifiable Study on TripAdvisor
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
@@ -31,9 +31,10 @@ The study is built around three commitments:
 - **Auditability.** Every extraction is schema-validated with logged failures, evidence
   spans are checked against the source text, and the extraction step is validated against
   grammar-constrained decoding and against a second open-weight model.
-- **Fair comparison.** Every model in the primary analysis is tuned by one identical
-  procedure. The originally submitted analysis, which did not do this, is retained
-  alongside the corrected one rather than replaced.
+- **Fair comparison.** Every ridge model in the primary analysis is tuned by one identical
+  procedure. Results under a mixed scheme with some fixed penalties are kept in
+  [`results/table1_panels.csv`](results/table1_panels.csv) (Panel A) and in S2 File, because
+  they show how unequal tuning can reverse the ranking of fusion designs.
 
 ## Quick start
 
@@ -85,37 +86,60 @@ commands in [`docs/REPRODUCE.md`](docs/REPRODUCE.md). Validate the final release
 Held-out performance on 877,808 TripAdvisor reviews of 3,945 properties, 5-fold
 `GroupKFold` by property, predictions clipped to [1, 5], mean ± SD across folds.
 
+Every ridge model uses one shared penalty chosen by inner GroupKFold(5) on the outer
+training fold (41 log-spaced values, two-decade extension at a boundary).
+
 | Method | MAE | RMSE |
 | :--- | :---: | :---: |
-| **Panel A — originally submitted protocol** | | |
-| Text-only (TF-IDF + Ridge) | 0.4644 ± 0.0059 | 0.6099 ± 0.0074 |
-| LLM aspects only | 0.5127 ± 0.0071 | 0.6862 ± 0.0083 |
-| Simple fusion (Text + LLM) | 0.4676 ± 0.0054 | 0.6210 ± 0.0064 |
-| Residual-on-LLM | 0.4488 ± 0.0058 | 0.5970 ± 0.0067 |
-| Upper bound (true aspects)† | 0.4322 ± 0.0072 | 0.6354 ± 0.0134 |
-| **Interaction Fusion** | **0.4385 ± 0.0061** | **0.5797 ± 0.0069** |
-| **Panel B — unified tuning protocol** | | |
+| **Deployable sparse linear models** | | |
 | Text-only (TF-IDF + Ridge) | 0.4625 ± 0.0065 | 0.6052 ± 0.0080 |
+| LLM aspects only | 0.5127 ± 0.0071 | 0.6862 ± 0.0083 |
 | Simple fusion (Text + LLM) | 0.4364 ± 0.0061 | 0.5771 ± 0.0069 |
 | Residual-on-LLM | 0.4423 ± 0.0062 | 0.5885 ± 0.0070 |
-| **Interaction Fusion** | **0.4362 ± 0.0058** | **0.5767 ± 0.0063** |
-| **Panel C — neural text baselines** | | |
+| Interaction fusion (Text + LLM + interactions) | 0.4362 ± 0.0058 | 0.5767 ± 0.0063 |
+| **Reference models using platform sub-ratings†** | | |
+| True aspects only | 0.4322 ± 0.0072 | 0.6354 ± 0.0134 |
+| Text + true aspects | 0.3849 ± 0.0082 | 0.5350 ± 0.0133 |
+| **Neural and LLM references** | | |
 | RoBERTa-base, fine-tuned | 0.3685 ± 0.0081 | 0.5365 ± 0.0099 |
-| BERT-base (CLS) + interaction block | 0.4119 ± 0.0065 | 0.5466 ± 0.0082 |
+| BERT-base, fine-tuned | 0.3793 ± 0.0080 | 0.5424 ± 0.0111 |
+| Qwen2.5-7B-Instruct, zero-shot (all reviews) | 0.3653 ± 0.0033 | 0.6295 ± 0.0026 |
 
-<sup>† Not deployable at inference time; consumes platform-provided aspect sub-ratings.</sup>
+<sup>† Not deployable at inference time; they consume platform-provided aspect sub-ratings.</sup>
 
-**What this shows.** Supplying the structured channel reduces MAE by 5.7 % against a
-strong sparse text baseline, and the gain replicates under a second extraction model and
-on an independent Booking.com corpus. The *functional form* in which the channel enters
-matters far less: under unified tuning, additive concatenation and segment-conditioned
-interaction differ by 0.0030 MAE in the hotel-weighted paired contrast, roughly one tenth
-of the gain either achieves over text alone. A fine-tuned transformer attains lower error
-than any configuration proposed here, at roughly eight times the fitting cost and without
-inspectable coefficients.
+**What this shows.** Adding the LLM-extracted aspect channel to sparse text lowers MAE by
+5.7 %, and the gain replicates under a second extraction model and on an independent
+Booking.com corpus, where it is smaller because those reviews mention fewer aspects. The
+functional form matters far less: simple concatenation and segment-by-aspect interaction
+differ by 0.0030 MAE in the hotel-weighted paired contrast, about one tenth of the gain
+either achieves over text alone. The interaction form is kept for its readable
+segment-specific aspect weights. A fine-tuned transformer and a zero-shot LLM rater reach a
+lower MAE. End to end, the extraction step (about 62 GPU-hours for the corpus, 254
+GPU-seconds per 1,000 new reviews) costs more GPU time than fine-tuning RoBERTa-base
+(3.0 GPU-hours), so the case for this pipeline is its auditable aspect record, not cost.
 
 Full per-fold metrics, paired significance tests, and the regularization audit are in
-[`results/`](results/) and in the three Supporting Information workbooks.
+[`results/`](results/) and in the Supporting Information files.
+
+## Second-round revision additions
+
+The second revision of the manuscript (PONE-D-26-23918R1) adds the analyses below. Tables
+are in [`results/r2/`](results/r2/), scripts are numbered 51 to 58, and the prompts are in
+[`supporting_information/S4_File.pdf`](supporting_information/S4_File.pdf).
+
+| Analysis | Result | Table |
+| :--- | :--- | :--- |
+| Zero-shot Qwen rater on all 877,808 reviews | MAE 0.3653, RMSE 0.6295 | `table1_main.csv` |
+| Text + true aspects reference | MAE 0.3849, RMSE 0.5350 | `table1_main.csv` |
+| BERT-base with the RoBERTa learning-rate selection | MAE 0.3793, RMSE 0.5424 (selected rate 5e-5) | `table1_main.csv`, `bert_lr_sweep.csv` |
+| Ablation A9: no sleep-quality columns | MAE rises by 0.0054 (hotel-weighted +0.0115) | `ablation_with_a9.csv` |
+| Routing empty extractions to text-only | MAE 0.4362 to 0.4350 | `routing_rule.csv` |
+| Independent judge on the quoted evidence | same polarity 83.1 %, opposite 0.5 % | `evidence_judge_summary.csv` |
+| Fidelity on reviews that mention the aspect | sleep quality r = 0.823 (0.352 on all rated) | `aspect_fidelity_by_mention.csv` |
+| Stated polarity convention in the prompt | Llama score-label consistency 0.35 to 1.00 | `prompt_portability.csv` |
+| Gain by number of mentioned aspects | TripAdvisor and Booking.com | `coverage_strata_*.csv` |
+| Segment-specific aspect weights | service 0.18 to 0.22 in every segment | `segment_aspect_weights_*.csv` |
+| End-to-end computational cost | extraction dominates | `computational_cost.csv` |
 
 ---
 
@@ -128,8 +152,8 @@ Full per-fold metrics, paired significance tests, and the regularization audit a
 ├── scripts/                   Retained numbered scripts for the reported pipeline
 ├── prompts/                   The exact extraction prompt as deployed
 ├── splits/                    Canonical hash-verified fold assignment
-├── results/                   CSV tables backing every number in the manuscript
-├── supporting_information/    S1, S2, S3 workbooks as submitted to the journal
+├── results/                   CSV tables backing every number in the manuscript (r2/: second revision)
+├── supporting_information/    S1 to S5 Files as submitted to the journal
 ├── figures/                   Manuscript figures
 └── docs/                      REPRODUCE.md and DATA.md
 ```
@@ -289,6 +313,12 @@ python scripts/42_phase4_booking_u0.py --folds 1,2,3,4,5 --inner-jobs 5
 
 # 6. Consolidate every reported table
 python scripts/43_phase4_consolidate.py
+
+# 7. Second-revision analyses (see docs/REPRODUCE.md for the GPU steps)
+python scripts/51_r2_u0_new_variants.py --variant TA
+python scripts/51_r2_u0_new_variants.py --variant NS
+python scripts/52_r2_fidelity_routing.py
+python scripts/53_r2_strata_segments_weights.py
 ```
 
 To skip extraction entirely, download `extraction/` from the
@@ -396,8 +426,8 @@ with this study.
 
 ```bibtex
 @misc{zhu2026interaction,
-  title   = {Interaction fusion of text and {LLM}-extracted aspects improves hotel
-             rating prediction at scale: A verifiable study on {TripAdvisor}},
+  title   = {Fusing text with {LLM}-extracted aspects improves hotel rating
+             prediction at scale: A verifiable study on {TripAdvisor}},
   author  = {Zhu, Xue and Zhu, Qinfeng},
   year    = {2026},
   note    = {Manuscript under review}

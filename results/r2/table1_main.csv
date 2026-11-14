@@ -1,0 +1,11 @@
+group,model_id,display_name,deployable,mae_mean,mae_sd,rmse_mean,rmse_sd,n
+Deployable sparse linear,phase4_u0_text_only_tfidf_ridge,Text-only (TF-IDF + Ridge),True,0.462494,0.006454,0.605248,0.008018,877808
+Deployable sparse linear,phase4_u0_llm_aspects_only,LLM aspects only,True,0.512656,0.007070,0.686231,0.008316,877808
+Deployable sparse linear,phase4_u0_text_llm_simple_fusion,Simple fusion (Text + LLM),True,0.436431,0.006103,0.577071,0.006886,877808
+Deployable sparse linear,phase4_u0_residual_on_llm,Residual-on-LLM,True,0.442327,0.006178,0.588520,0.006997,877808
+Deployable sparse linear,phase4_u0_interaction_fusion,Interaction fusion (Text + LLM + interactions),True,0.436179,0.005819,0.576671,0.006324,877808
+Reference with platform sub-ratings,phase4_u0_upper_bound_true_aspects,True aspects only,False,0.432189,0.007163,0.635430,0.013355,877808
+Reference with platform sub-ratings,mr_u0_text_true_aspects_reference,Text + true aspects,False,0.384924,0.008213,0.535016,0.013316,877808
+Neural and LLM references,roberta_base_phase2_lr5em05_regression,"RoBERTa-base, fine-tuned",True,0.368495,0.008146,0.536517,0.009893,877808
+Neural and LLM references,bert_base_uncased_mr_lr5em05_regression,"BERT-base, fine-tuned (selected learning rate)",True,0.379314,0.008048,0.542400,0.011115,877808
+Neural and LLM references,qwen_direct_zero_n877808,"Qwen2.5-7B-Instruct, zero-shot",True,0.365271,0.003270,0.629502,0.002597,877808

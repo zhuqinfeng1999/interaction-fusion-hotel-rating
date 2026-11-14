@@ -55,6 +55,44 @@ python scripts/47_finalize_phase5.py
 python scripts/48_phase6a_assemble.py
 ```
 
+## Second-revision analyses (PONE-D-26-23918R1)
+
+All outputs go to `outputs/r2/`, except scripts 13 and 09, which keep writing to `outputs/`.
+The GPU steps need a vLLM server per model. Serve Llama-3.1-8B-Instruct with
+`--served-model-name meta-llama/Llama-3.1-8B-Instruct --port 8010`, or pass `--model` and
+`--endpoint` to scripts 55 and 56.
+
+```bash
+# Zero-shot Qwen rater on all reviews (reuses cached rows of the earlier 100k subsample)
+python scripts/13_run_llm_direct_rating.py --modes zero --sample-size 877808 --concurrency 48 --resume
+
+# BERT-base learning-rate sweep (same fold-1 validation split as RoBERTa), then 5 folds at the selected rate
+python scripts/54_r2_bert_lr_sweep.py --stage sweep --learning-rates 1e-5,2e-5,3e-5,5e-5
+python scripts/54_r2_bert_lr_sweep.py --stage select
+python scripts/09_train_transformer_regression.py --model-name bert-base-uncased \
+  --model-tag bert_base_uncased_mr_lr5em05 --learning-rate 5e-5 --folds 1,2,3,4,5 --resume
+
+# Text + true aspects reference (TA) and ablation A9 (no sleep-quality columns), U0 protocol
+python scripts/51_r2_u0_new_variants.py --variant TA --inner-jobs 5
+python scripts/51_r2_u0_new_variants.py --variant NS --inner-jobs 5
+
+# Analyses on held-out predictions (no refits)
+python scripts/52_r2_fidelity_routing.py
+python scripts/53_r2_strata_segments_weights.py
+
+# Llama-3.1-8B evidence judge and prompt-portability test
+python scripts/55_r2_evidence_judge.py
+python scripts/56_r2_prompt_portability.py
+
+# Collect numbers and build S5 File
+python scripts/57_r2_collect.py
+python scripts/58_r2_s5_workbook.py
+```
+
+Replace `5e-5` and the tag in the BERT command with the rate printed by `--stage select`.
+Script 55 writes item-level files that contain quoted evidence; keep them local. The public
+version on OSF (`diagnostics/evidence_judge_r2.parquet`) keeps only labels and row keys.
+
 ## Expected runtime
 
 - Preprocessing/split expansion: minutes on local SSD storage.
@@ -111,6 +149,14 @@ Exact published numbers require the released sanitized structured extraction fie
 - `47_finalize_phase5.py` — Phase 5 consistency report
 - `48_phase6a_assemble.py` — Supporting Information workbook assembly
 - `49_phase6b_prepare_release.py` — sanitized public-release assembly and verification
+- `51_r2_u0_new_variants.py`: text + true aspects reference and ablation A9 under U0
+- `52_r2_fidelity_routing.py`: routing rule for empty extractions; fidelity by mention
+- `53_r2_strata_segments_weights.py`: fidelity table, coverage strata, segment phrases, segment-specific weights
+- `54_r2_bert_lr_sweep.py`: BERT-base learning-rate selection
+- `55_r2_evidence_judge.py`: independent judge on the quoted evidence
+- `56_r2_prompt_portability.py`: Llama re-extraction with a stated polarity convention
+- `57_r2_collect.py`: collects the numbers reported in the revision
+- `58_r2_s5_workbook.py`: builds S5 File
 
 ## Dropped scripts
 

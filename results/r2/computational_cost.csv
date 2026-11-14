@@ -1,0 +1,6 @@
+pipeline,llm_inference_full_corpus_gpu_h,fitting_5_folds,per_1000_new_reviews
+Text-only (TF-IDF + Ridge),0.0,0.08 CPU-h,<1 CPU-s
+Simple fusion,62.0,0.10 CPU-h,254 GPU-s
+Interaction fusion,62.0,0.37 CPU-h,254 GPU-s
+"RoBERTa-base, fine-tuned",0.0,3.0 GPU-h,0.4 GPU-s
+"Qwen2.5-7B-Instruct, zero-shot",3.4,none,14 GPU-s

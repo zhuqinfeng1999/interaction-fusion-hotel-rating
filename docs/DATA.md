@@ -29,6 +29,12 @@ No upstream review text is redistributed.
 - Booking `y_true` and unsuffixed model columns use the native score scale; `y_true_rescaled_1_5` and columns ending `__rescaled_1_5` provide the manuscript's 1-5 scale.
 - `coefficients/` and `diagnostics/`: complete machine-readable inference and quality tables.
 
+Added with the second revision (PONE-D-26-23918R1):
+
+- `predictions/tripadvisor_predictions_r2.parquet`: held-out predictions (clipped to [1,5], float32) of the zero-shot Qwen rater on all reviews, the text + true aspects reference, ablation A9, and BERT-base at the selected learning rate. Keys match `tripadvisor_predictions_wide.parquet`.
+- `diagnostics/evidence_judge_r2.parquet`: one row per review and aspect for the 2,000 judged reviews, with `row_id`, `aspect_id`, the extractor's sentiment and score, the number of quoted spans, whether all spans matched the text, and the judge's relevance and polarity labels. Evidence strings are excluded; the evidence-offset tables locate them.
+- `diagnostics/prompt_portability_10k_labels.parquet`: categorical outputs (mention, sentiment label, score, traveler segment) of three guided extractions of the same 10,000 reviews: Qwen, Llama with the original prompt, and Llama with the stated polarity convention. Sentiment labels are included because the consistency measure needs them. No text is included.
+
 ## Evidence-offset convention
 
 Aspect IDs are `0=service`, `1=cleanliness`, `2=location`, `3=rooms`, `4=value`, `5=sleep_quality`.
