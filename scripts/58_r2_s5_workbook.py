@@ -28,7 +28,7 @@ add("judge_summary", pd.DataFrame(rows),
 add("judge_confusion", pd.DataFrame(j["confusion"]).rename_axis("qwen_label").reset_index(),
     "Rows: Qwen sentiment label; columns: judge polarity.")
 add("prompt_portability", pd.read_csv(MR / "portability" / "portability_metrics.csv"),
-    "10,000 reviews of the extractor-comparison sample. qwen = Qwen guided; llama = Llama guided with the original prompt; llamarev = Llama guided with the added convention sentence (S4 File). consistency = share of rows where sign(score) matches the sentiment label.")
+    "10,000 reviews of the extractor-comparison sample. qwen = Qwen guided; llama = Llama guided with the base prompt; llamarev = Llama guided with the added convention sentence (S4 File). consistency = share of rows where sign(score) matches the sentiment label.")
 add("strata_tripadvisor", pd.read_csv(AN / "q1_tripadvisor_strata.csv"),
     "TripAdvisor held-out MAE by number of mentioned aspects (common tuning protocol).")
 add("strata_booking", pd.read_csv(AN / "q2_booking_strata.csv"),
@@ -71,7 +71,7 @@ for p in sorted(list((MR / "metrics").glob("bert_base_uncased_mr_lr*_regression.
     for f in m["folds"]:
         models.append({"model": "BERT-base fine-tuned (selected learning rate)", "model_id": p.stem, "fold": f["fold"],
                        "mae": f["clipped"]["mae"], "rmse": f["clipped"]["rmse"], "selected": f["selected_hyperparameters"]["learning_rate"]})
-add("new_models_per_fold", pd.DataFrame(models), "Per-fold held-out metrics (predictions clipped to [1,5]) of the models added in this revision.")
+add("new_models_per_fold", pd.DataFrame(models), "Per-fold held-out metrics (predictions clipped to [1,5]) of the zero-shot rater, the text + true aspects reference, ablation A9, and BERT-base.")
 sel = MR / "tuning" / "bert_lr" / "selection.json"
 if sel.exists():
     add("bert_lr_sweep", pd.DataFrame(json.load(open(sel))["rows"]), "BERT-base learning-rate sweep on the grouped validation split of outer fold 1 (same split as RoBERTa).")
